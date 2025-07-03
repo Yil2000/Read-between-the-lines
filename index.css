@@ -1,16 +1,16 @@
  body{
-    padding-top: 60px;
+    padding: 0;
     margin: 0;
     font-family: sans-serif;
  }
  
- .navbar {
+ .navbar{
+    display: flex;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    background-color: rgba(255, 255, 255, 0.1);
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255,255,255,0.1);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid rgb(226 232 240);
     min-height: 60px;
