@@ -6,7 +6,7 @@
  
  .navbar{
     display: flex;
-   z-index: 999;
+   overflow-x: hidden;
     position: sticky;
     top: 0;
     align-items: center;
