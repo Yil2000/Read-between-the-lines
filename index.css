@@ -9,10 +9,11 @@
     position: sticky;
     top: 0;
     align-items: center;
-    justify-content: space-between;    
-    background-color: white;
+    justify-content: space-between;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(6px);
     border-bottom: 1px solid rgb(226 232 240);
-    height: 60px;
+    min-height: 60px;
 }
 
 .navbar a{
@@ -22,11 +23,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 130px;
+    margin-left: 5VW;
 }
 
 .leftnav a{
-    font-size: 20px;
+    font-size: clamp(16px, 1.5vw, 20px);
     font-weight: bold;
     color: rgb(15 23 42);
 }
@@ -43,11 +44,12 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-right: 100px;
+    gap: 1em;
+    margin-right: 2vw;
 }
 
 .rightnav a{
-    font-size: 17px;
+    font-size:  clamp(10px,3vw,17px);
     color: rgb(71 85 105);
     transition: 0.2s;
 }
@@ -64,28 +66,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 1000px;
+    min-height: 1000px;
     background-color: rgb(244, 255, 255);
-    margin-bottom: 100px;
+    margin-bottom: clamp(100px, -10vw + 200px, 250px);
 }
 
 .hero-content{
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 750px;
+    min-height: 750px;
     width: 85%;
 }
 
 .hero-text{
     height: 400px;
     width: 600px;
+    margin-top: 100px;
 }
 
 .hero-text h1{
     font-weight: 700;
     color: rgb(15 23 42);
-    font-size: 75px;
+    font-size: clamp(10px,10vw,75px);
     margin: 0px;
     line-height: 1;
 }
@@ -103,22 +107,25 @@
     display: flex;
     align-items: center ;
     justify-content: center;
-    background-color: rgb(79 70 229);
+    background: linear-gradient(128deg, rgb(18, 18, 245), rgb(22, 172, 218), rgb(150, 6, 216));
+    background-size: 200% 200%;
+    background-position: left center;
+    transition: background-position 0.4s ease;
     margin-top: 100px;
     width: 200px;
     height: 25px;
     padding: 10px;
     border-radius: 7px;
     cursor: pointer;
-
 }
 
 .hero-button:hover{
-    background-color: rgb(62, 55, 209);
-}  
+    background-position: right center;
+}
 
 .hero-button:active{
-    background-color: rgb(100, 93, 228);
+    opacity: 0.85;
+
 }
 
 .hero-button a{
@@ -128,6 +135,7 @@
     font-weight: 500;
     font-size: 18px;
 }
+
 
 .rating{
     width: 350px;
@@ -146,10 +154,24 @@
     margin-right: 0px;
 }
 
-.hero-img img{
-    border-radius: 10px;
-    height: 750px;
-    width: auto;
+.hero-img {
+  width: 400px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hero-img img {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.hero-img:hover{
+    transform: scale(1.05) rotate(2deg);
 }
 
 .book{
@@ -164,20 +186,21 @@
   scroll-margin-top: 80px;
 }
 .book-content{
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1000px;
+    max-width: 1000px;
 }
 
 .book-content h2{
-    font-size: 35px;
+    font-size: clamp(20px,5VW,40px);
     font-weight: 700;
     text-align: center;
     color: rgb(15 23 42);
 }
 .book-content-p{
-    width: 850px;
+    max-width: 850px;
 }
 
 .book-content p{
@@ -196,22 +219,24 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(248 250 252);
-    height: 1000px;
+    min-height: 800px;
 }
 .am-content{
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-around;
-    width: 1000px;
+    max-width: 1000px;
 }
 
 .am-img{
     display: flex;
     align-items: center;
     justify-content: center;
+        padding: 30px;
 }
 .am-img img{
     border-radius: 20px;
-    width: 500px;
+    max-width: 400px;
 }
 
 .am-text h2{
@@ -239,17 +264,17 @@
     display: flex;
     align-items:flex-start;
     justify-content: center;
-    height: 2400px;
+    min-height: 2400px;
 }
 
 .mybg-content{
-    margin-top: 100px;
+    margin-top: clamp(100px, -10vw + 200px, 250px);
     padding: 0;
     display: flex;
     text-align: left;
     justify-content: center;
     flex-direction: column;
-    width: 1000px;
+    max-width: 1000px;
     margin-bottom: 100px;
 }
 
@@ -257,14 +282,14 @@
     color: rgb(15 23 42);
     margin-top: 5px;
     font-weight: 700;
-    font-size: 35px;
+    font-size: clamp(10px,5vw,35px);
     text-align: center;
 }
 
 .mybg-content h3{
     margin: 0;
-    color: rgb(79 70 229);  
-    font-size: 25px;
+    color: rgb(79 70 229); 
+    font-size: clamp(10px,4vw,25px);
     text-align: center;
 }
 
@@ -283,7 +308,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 450px;
+    min-height: 450px;
 }
 
 .buybook-content{
@@ -291,22 +316,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 65%;
-    height: 400px;
+    width: 80%;
+    min-height: 400px;
 }
 
 .buybook h2{
-    margin-bottom: 80px;
+    margin: 60px;
     color: white;
-    font-size: 40px;
+    font-size:clamp(10px,5vw,40px);
 }
 
 .buy-btns{
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 1100px;
+    min-width: 200px;
+    flex-wrap: wrap;
 
 }
 
@@ -359,13 +384,13 @@
 }
 
 #buy-the-book{
-    scroll-margin-top: 100px;
+    scroll-margin-top: 60px;
 }
 
 
 .contact{
     background-color: rgb(15 23 42);
-    height: 300px;
+    height: 60vh;
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -389,17 +414,24 @@
 }
 
 .contact-h h3{
+        text-align: center;
+    font-size: clamp(10px,4vw,18px);
     margin-top: 10px;
     color: rgb(226, 226, 226);
     font-weight: 400;
 }
 
-.contact-btns{
+.contact-btns {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 3rem;
     margin-top: 40px;
-    width: 600px;
+    min-height: 100px;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
 }
 
 .contact-btns a{
@@ -430,6 +462,9 @@
         background-color: #5850ff;
 }
 
+#contact{
+    scroll-margin-top: 60px;
+}
 
 .footer{
     padding: 0px;
